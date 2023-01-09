@@ -1,4 +1,5 @@
-import { Role } from 'src/server/shared/utils/enums/roles/role.enum';
+import { Roles } from 'src/server/shared/auth/roles/role.decorator';
+import { Role } from 'src/server/shared/auth/roles/role.enum';
 import { Entity, PrimaryGeneratedColumn, Column, Unique } from 'typeorm';
 
 @Entity()
@@ -12,5 +13,6 @@ export class User {
   @Column({ type: 'varchar' })
   public password: string;
 
-  public roles: Role[];
+  @Column({ type: 'enum', enum: Role, default: Role.Admin })
+  public role: Role;
 }
