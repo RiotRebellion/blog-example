@@ -1,4 +1,12 @@
-import { Controller, UseGuards, Post, Body, UseFilters } from '@nestjs/common';
+import {
+  Controller,
+  UseGuards,
+  Post,
+  Body,
+  UseFilters,
+  Param,
+  Put,
+} from '@nestjs/common';
 import { AuthService } from 'src/server/shared/auth/auth.service';
 import { LocalAuthGuard } from 'src/server/shared/auth/local/local-auth.guard';
 import { AuthentificationExceptionFilter } from 'src/server/shared/filters/authentification-exception.filter';
