@@ -11,12 +11,12 @@ export class UserController {
 
   @Post('login')
   @UseGuards(LocalAuthGuard)
-  async Login(@Body() loginUserDTO: LoginUserDTO) {
+  async login(@Body() loginUserDTO: LoginUserDTO) {
     return await this.authService.Login(loginUserDTO);
   }
 
   @Post('register')
-  async Register(@Body() registerUserDto: RegisterUserDto) {
+  async register(@Body() registerUserDto: RegisterUserDto) {
     return await this.authService.Register(registerUserDto);
   }
 }
